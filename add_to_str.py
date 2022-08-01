@@ -15,6 +15,7 @@ def add_to_str(text):
         return inner_2
     return inner_1
 
+# ---------------------------------------------------------
 
 class DecoratorClass:
 
