@@ -11,7 +11,8 @@ class Box:
 
     def volume(self):
         return self.x * self.y * self.z
-
+    
+    @staticmethod
     def sum_volume(box_1, box_2):
         return box_1.volume() + box_2.volume()
 
