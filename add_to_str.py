@@ -5,8 +5,8 @@
 
 def add_to_str(text):
     '''
-    appends a string (on the left) 
-    to the result of the __str__ method 
+    appends a string (on the left)
+    to the result of the __str__ method
     '''
     def inner_1(cls):
         def inner_2(*args, **kwargs):
@@ -16,6 +16,21 @@ def add_to_str(text):
     return inner_1
 
 
+class DecoratorClass:
+
+    def __init__(self, cls):
+        self.cls = cls
+        self.text = 'Course'
+
+    def __call__(self, *args, **kwargs):
+        self.new_instance = self.cls(*args, **kwargs)
+        return self
+
+    def __str__(self):
+        return f'{self.text} {self.new_instance}'
+
+
+@DecoratorClass
 @add_to_str('Student:')
 class Student:
 
